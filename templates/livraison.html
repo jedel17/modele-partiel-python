@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Livraison</title>
 </head>
 <body>
 
+<h1>Affichage des livraisons a effectuer</h1>
+
+
+{% if commande %}
+    {% for a in commande %}
+
+        <p>nom du client: {{a['nom']}}</p>
+        <p>prénom du client: {{a['prenom']}}</p>
+        <p>nom de la société: {{a['nomSociete']}}</p>
+        <p>adresse: {{a['adresse']}}</p>
+        <p>code postal : {{a['codepostal']}}</p>
+        <p>ville: {{a['ville']}}</p>
+        <p>quantité commandée: {{a['qtte']}}</p>
+    {% endfor %}
+{% endif %}
 </body>
 </html>

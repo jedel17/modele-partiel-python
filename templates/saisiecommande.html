@@ -9,12 +9,21 @@
 
 <h1> Saisir votre commande</h1>
 
+<form method="POST" id="form_1">
+
 <p><input type="text" name="nom" id="nom" required> nom du client</input><br></p>
+<p><input type="text" name="prenom" id="prenom" required> prenom du client</input><br></p>
 <p><input type="text" name="nomSociete" id="nomSociete" required> nom de la société</input><br></p>
 <p><input type="text" name="adresse" id="adresse" required> adresse</input><br></p>
 <p><input type="text" name="codepostal" id="codepostal" required> code postal</input><br></p>
 <p><input type="text" name="ville" id="ville" required> ville</input><br></p>
-<p><input type="text" name="quantite" id="quantite" required> quantite a livrer</input></p>
+<p><input type="number" name="qtte" id="qtte" required> quantite a livrer en kg</input></p>
+
+
+<button type="submit" name="valider" id="valider"> valider</button>
+<button type="submit" name="enregistrer" id="enregistrer"> enregistrer la commande</button>
+
+</form>
 
 </body>
 </html>
