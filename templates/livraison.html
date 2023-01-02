@@ -9,8 +9,12 @@
 <h1>Affichage des livraisons a effectuer</h1>
 
 
-{% if commande %}
-    {% for a in commande %}
+{% if premierecommande %}
+    {% for a in premierecommande %}
+
+<h2> commande a livrer</h2>
+
+
 
  <button type="submit" class="btn btn-primary" id='{{btn}}' name="{{btn}}">{{btn}}
 
@@ -25,6 +29,30 @@
     {% endfor %}
 {% endif %}
 
+<br><br>
+
+<form action="{{ url_for ('page_livraison') }}" method="POST" id="form_1">
+    <div>
+    <button type="submit" class="btn btn-primary" id='button_terminer' name="button_terminer">livraison effectuée</button>
+    </div>
+    </form>
+
+
+<h2> Commandes suivantes a livrer</h2>
+
+{% if commandesuivante %}
+    {% for a in commandesuivante %}
+
+<p>nom du client: {{a['nom']}}</p>
+        <p>prénom du client: {{a['prenom']}}</p>
+        <p>nom de la société: {{a['nomSociete']}}</p>
+        <p>adresse: {{a['adresse']}}</p>
+        <p>code postal : {{a['codepostal']}}</p>
+        <p>ville: {{a['ville']}}</p>
+        <p>quantité commandée: {{a['qtte']}}</p><br><br>
+
+  {% endfor %}
+{% endif %}
 
 <p></p><a href={{url_for('page_index')}}>page accueil</a></p>
 </body>
