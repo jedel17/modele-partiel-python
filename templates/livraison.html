@@ -12,14 +12,20 @@
 {% if commande %}
     {% for a in commande %}
 
+ <button type="submit" class="btn btn-primary" id='{{btn}}' name="{{btn}}">{{btn}}
+
         <p>nom du client: {{a['nom']}}</p>
         <p>prénom du client: {{a['prenom']}}</p>
         <p>nom de la société: {{a['nomSociete']}}</p>
         <p>adresse: {{a['adresse']}}</p>
         <p>code postal : {{a['codepostal']}}</p>
         <p>ville: {{a['ville']}}</p>
-        <p>quantité commandée: {{a['qtte']}}</p>
+        <p>quantité commandée: {{a['qtte']}}</p><br><br>
+     </button>
     {% endfor %}
 {% endif %}
+
+
+<p></p><a href={{url_for('page_index')}}>page accueil</a></p>
 </body>
 </html>

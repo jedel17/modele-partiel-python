@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for
 
 app=Flask(__name__)
 liste=[]
+valider=[]
 
 @app.route('/')
 def page_index():
@@ -14,7 +15,8 @@ def page_saisiecommande():
         data = request.form.to_dict()
         if 'enregistrer' in data:
             liste.append(data)
-            print(data)
+            premierecommande=liste[0]
+            print(premierecommande)
             return redirect(url_for('page_livraison'))
     return render_template('saisiecommande.html')
 
